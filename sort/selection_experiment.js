@@ -3,13 +3,13 @@ function selectionSort(arr) {
     [arr[i], arr[j]] = [arr[j], arr[i]];
   }
   for (let i = 0; i < arr.length - 1; i++) {
-    let minimun = i;
+    let minimum = i;
     for (let j = i + 1; j < arr.length; j++) {
-      if (arr[minimun] > arr[j]) {
-        minimun = j;
+      if (arr[minimum] > arr[j]) {
+        minimum = j;
       }
     }
-    if(i !== minimun) swap(i, minimun);
+    if(i !== minimum) swap(i, minimum);
   }
   return arr;
 }

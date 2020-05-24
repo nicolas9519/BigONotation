@@ -24,6 +24,8 @@ This is a project to save all the progress in the course of [Big o Notation](htt
   - [Merging](#merging)
   - [Quick](#quick)
   - [Radix](#radix)
+- [Data structures](#data-structures)
+  - [Singly linked list](#singly-linked-list)
 
 ## Functions
 
@@ -263,4 +265,23 @@ const arr = [5, 62, 3451, 4, 6, 239, 23, 237, 0];
 // [0, 4, 5, 6, 23, 62, 237, 239, 3451]
 // {0: [0, 4, 5, 6, 23, 62, 237, 239], 1 [], 2: [], 3: [3451], 4: [], 5: [], 6: [], 7: [], 8:[], 9: []}
 // [0, 4, 5, 6, 23, 62, 237, 239, 3451]
+```
+
+## Data structures
+
+These are some data structures which can be useful to resolve different situations.
+
+### Singly linked list
+
+The singly linked list consists of nodes that connect to the next and have a head and tail. This data structure allows us to insert and delete at the beginning without using such much use of the resources.
+
+Action | Function
+------ | --------
+Insertion | $O(1)$
+Removal | $O(n)$
+Searching | $O(n)$
+Accessing | $O(n)$
+
+```plain text
+ (A).next() -> (B).next() -> (C).next() -> null
 ```

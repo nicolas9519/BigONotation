@@ -68,7 +68,7 @@ class SinglyLinkedList {
   }
 
   get(index) {
-    if (isNaN(index) || !Number.isInteger(index)) throw new Error('Index should be a integer');
+    if (!Number.isInteger(index)) throw new Error('Index should be a integer');
     if (index >= this.length || index < 0) return undefined;
     let count = 0;
     let node = this.head;
@@ -87,7 +87,7 @@ class SinglyLinkedList {
   }
 
   insert(index, value) {
-    if (isNaN(index) || !Number.isInteger(index)) throw new Error('Index should be a integer');
+    if (!Number.isInteger(index)) throw new Error('Index should be a integer');
     if (index > this.length || index < 0) return false;
     if (index === this.length) {
       this.push(value);
@@ -107,7 +107,7 @@ class SinglyLinkedList {
   }
 
   remove(index) {
-    if (isNaN(index) || !Number.isInteger(index)) throw new Error('Index should be a integer');
+    if (!Number.isInteger(index)) throw new Error('Index should be a integer');
     if (index >= this.length || index < 0) return undefined;
     if (index === this.length - 1) return this.pop();
     if (index === 0) return this.shift();

@@ -26,6 +26,7 @@ This is a project to save all the progress in the course of [Big o Notation](htt
   - [Radix](#radix)
 - [Data structures](#data-structures)
   - [Singly linked list](#singly-linked-list)
+  - [Doubly linked list](#doubly-linked-list)
 
 ## Functions
 
@@ -283,5 +284,21 @@ Searching | $O(n)$
 Accessing | $O(n)$
 
 ```plain text
- (A).next() -> (B).next() -> (C).next() -> null
+ (A).next -> (B).next -> (C).next -> null
+```
+
+### Doubly linked list
+
+The doubly linked list seems like the singly linked list, but in this case, it also connects with the previous node.
+It also uses more memory.
+
+Action | Function
+------ | --------
+Insertion | $O(1)$
+Removal | $O(1)$
+Searching | $O(n)$
+Accessing | $O(n)$
+
+```plain text
+ null <- prev.(A).next <-> prev.(B).next <-> prev.(C).next -> null
 ```

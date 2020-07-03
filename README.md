@@ -316,6 +316,7 @@ Removal | $O(1)$
  null <- prev.(A) <- prev.(B) <- prev.(C)
  or
  (A).next -> (B).next -> (C).next -> null
+ [] -> [1] -> [1, 2] -> [1, 2, 3] -> [1, 2] -> [1] -> []
 ```
 
 ### Queues
@@ -329,4 +330,5 @@ Removal | $O(1)$
 
 ```plain text
  (A).next -> (B).next -> (C).next -> null
+ [] -> [1] -> [1, 2] -> [1, 2, 3] -> [2, 3] -> [3] -> []
 ```

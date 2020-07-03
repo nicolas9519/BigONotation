@@ -302,3 +302,20 @@ Accessing | $O(n)$
 ```plain text
  null <- prev.(A).next <-> prev.(B).next <-> prev.(C).next -> null
 ```
+
+### Stack
+
+The main principal is the last in, first out (LIFO). EG. Call stack js.
+
+Action | Function
+------ | --------
+Insertion | $O(1)$
+Removal | $O(1)$
+Searching | $O(n)$
+Accessing | $O(n)$
+
+```plain text
+ null <- prev.(A) <- prev.(B) <- prev.(C)
+ or
+ (A).next -> (B).next -> (C).next -> null
+```

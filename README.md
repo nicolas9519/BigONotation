@@ -311,11 +311,22 @@ Action | Function
 ------ | --------
 Insertion | $O(1)$
 Removal | $O(1)$
-Searching | $O(n)$
-Accessing | $O(n)$
 
 ```plain text
  null <- prev.(A) <- prev.(B) <- prev.(C)
  or
+ (A).next -> (B).next -> (C).next -> null
+```
+
+### Queues
+
+The main principal is the first in, first out (FIFO).
+
+Action | Function
+------ | --------
+Insertion | $O(1)$
+Removal | $O(1)$
+
+```plain text
  (A).next -> (B).next -> (C).next -> null
 ```

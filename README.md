@@ -29,6 +29,7 @@ This is a project to save all the progress in the course of [Big o Notation](htt
   - [Doubly linked list](data_structures#doubly-linked-list)
   - [Stack](data_structures#stack)
   - [Queues](data_structures#queues)
+  - [Trees](data_structures#trees)
 
 ## Functions
 

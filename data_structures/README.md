@@ -9,6 +9,8 @@ These are some data structures which can be useful to resolve different situatio
 - [Doubly linked list](#doubly-linked-list)
 - [Stack](#stack)
 - [Queues](#queues)
+- [Trees](#trees)
+  - [Binary Search Trees](#binary-search-trees)
 
 ## Singly linked list
 
@@ -69,4 +71,35 @@ Removal | $O(1)$
 ```plain text
  (A).next -> (B).next -> (C).next -> null
  [] -> [1] -> [1, 2] -> [1, 2, 3] -> [2, 3] -> [3] -> []
+```
+
+## Trees
+
+A tree have just one node of beginning, it just increase to the bottom, they just have a relations with their parents or child.
+Applications. HTML DOM, Networks, Artificial intelligence, folders structure
+
+```plain text
+       A
+     /   \
+    B     C
+   / \
+  D   F
+```
+
+### Binary Search Trees
+
+The parent can't have more than two children, the left has to be lower than his parent and the right has to be greater.
+
+Action | Function
+------ | --------
+Insertion | $O(log n)$
+Removal | $O(log n)$
+
+**Note:** _In the worst scenario, it will be $O(n)_
+
+```plain text
+           14
+    9          22
+  6    11    19    30
+     10  13         26
 ```

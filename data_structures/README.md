@@ -101,5 +101,27 @@ Removal | $O(log n)$
            14
     9          22
   6    11    19    30
-     10  13         26
+     10  13      26
+```
+
+### Traversing a tree
+
+Methods to search in a tree.
+
+#### Breadth-first Search (BFS)
+
+In this approach, it moves vertically checking all the children at the same level.
+
+```plain text
+Output from main example
+[14, 9, 22, 6, 11, 19, 30, 10, 13, 26]
+```
+
+#### Depth-first Search (DFS)
+
+**PreOrder:** Start from the root and go down just in one direction, when it finished starts in the other one.
+
+```plain text
+Output from main example
+[14, 9, 6, 11, 10, 13, 22, 19, 30, 26]
 ```

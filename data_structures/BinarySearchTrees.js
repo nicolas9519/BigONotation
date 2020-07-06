@@ -1,3 +1,4 @@
+const Queue = require('./Queues');
 class Node {
   constructor(value) {
     this.value = value;
@@ -87,17 +88,54 @@ class BinarySearchTree {
     return current ? current : undefined;
   }
 
-}
+  breadthFirstSearch() {
+    const queue = new Queue();
+    const visited = [];
+    queue.enqueue(this.root);
+    while(queue.size) {
+      const node = queue.dequeue();
+      visited.push(node.value);
+      if(node.left) queue.enqueue(node.left);
+      if(node.right) queue.enqueue(node.right);
+    }
+    return visited;
+  }
 
+  helperPreOrder(node) {
+    let visited = [node.value];
+    if(node.left) visited = visited.concat(this.helperPreOrder(node.left));
+    if(node.right) visited = visited.concat(this.helperPreOrder(node.right));
+    return visited;
+  }
+
+  DFSPreOrder() {
+    if (!this.root) return [];
+    const visited = this.helperPreOrder(this.root);
+    return visited;
+  }
+
+}
+/*
+         14
+  9          22
+6    11    19    30
+   10  13      26
+*/
 const myTree = new BinarySearchTree();
+myTree.insert(14);
+myTree.insert(9);
+myTree.insert(22);
 myTree.insert(6);
-myTree.insert(3);
-myTree.insert(4);
-myTree.insert(8);
-myTree.insert(7);
-myTree.insert(6);
-myTree.find(6);
-myTree.find(4);
-myTree.find(7);
+myTree.insert(11);
+myTree.insert(19);
+myTree.insert(30);
+myTree.insert(10);
+myTree.insert(13);
+myTree.insert(26);
+myTree.find(14);
+myTree.find(30);
+myTree.find(10);
 myTree.find(9);
+myTree.breadthFirstSearch();
+myTree.DFSPreOrder();
 console.log(myTree);

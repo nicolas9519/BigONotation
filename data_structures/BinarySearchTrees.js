@@ -89,28 +89,57 @@ class BinarySearchTree {
   }
 
   breadthFirstSearch() {
+    if (!this.root) return [];
     const queue = new Queue();
     const visited = [];
     queue.enqueue(this.root);
-    while(queue.size) {
+    while (queue.size) {
       const node = queue.dequeue();
       visited.push(node.value);
-      if(node.left) queue.enqueue(node.left);
-      if(node.right) queue.enqueue(node.right);
+      if (node.left) queue.enqueue(node.left);
+      if (node.right) queue.enqueue(node.right);
     }
     return visited;
   }
 
   helperPreOrder(node) {
     let visited = [node.value];
-    if(node.left) visited = visited.concat(this.helperPreOrder(node.left));
-    if(node.right) visited = visited.concat(this.helperPreOrder(node.right));
+    if (node.left) visited = visited.concat(this.helperPreOrder(node.left));
+    if (node.right) visited = visited.concat(this.helperPreOrder(node.right));
     return visited;
   }
 
   DFSPreOrder() {
     if (!this.root) return [];
     const visited = this.helperPreOrder(this.root);
+    return visited;
+  }
+
+  helperPostOrder(node) {
+    let visited = [];
+    if (node.left) visited = visited.concat(this.helperPostOrder(node.left));
+    if (node.right) visited = visited.concat(this.helperPostOrder(node.right));
+    visited.push(node.value);
+    return visited;
+  }
+
+  DFSPostOrder() {
+    if (!this.root) return [];
+    const visited = this.helperPostOrder(this.root);
+    return visited;
+  }
+
+  helperInOrder(node) {
+    let visited = [];
+    if (node.left) visited = visited.concat(this.helperInOrder(node.left));
+    visited.push(node.value);
+    if (node.right) visited = visited.concat(this.helperInOrder(node.right));
+    return visited;
+  }
+
+  DFSInOrder() {
+    if (!this.root) return [];
+    const visited = this.helperInOrder(this.root);
     return visited;
   }
 
@@ -138,4 +167,5 @@ myTree.find(10);
 myTree.find(9);
 myTree.breadthFirstSearch();
 myTree.DFSPreOrder();
-console.log(myTree);
+myTree.DFSPostOrder();
+myTree.DFSInOrder();

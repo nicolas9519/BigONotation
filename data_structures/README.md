@@ -11,6 +11,7 @@ These are some data structures which can be useful to resolve different situatio
 - [Queues](#queues)
 - [Trees](#trees)
   - [Binary Search Trees](#binary-search-trees)
+  - [Traversing a tree](#traversing-a-tree)
 
 ## Singly linked list
 
@@ -124,4 +125,18 @@ Output from main example
 ```plain text
 Output from main example
 [14, 9, 6, 11, 10, 13, 22, 19, 30, 26]
+```
+
+**PostOrder:** Visit first the children before than the father
+
+```plain text
+Output from main example
+[6, 10, 13, 11, 9, 19, 26, 30, 22, 14]
+```
+
+**InOrder:** Visit first the left side before to visit right
+
+```plain text
+Output from main example
+[6, 9, 10, 11, 13, 14, 19, 22, 26, 30]
 ```

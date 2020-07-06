@@ -12,6 +12,7 @@ These are some data structures which can be useful to resolve different situatio
 - [Trees](#trees)
   - [Binary Search Trees](#binary-search-trees)
   - [Traversing a tree](#traversing-a-tree)
+  - [Binary heaps](#binary-heaps)
 
 ## Singly linked list
 
@@ -139,4 +140,54 @@ Output from main example
 ```plain text
 Output from main example
 [6, 9, 10, 11, 13, 14, 19, 22, 26, 30]
+```
+
+### Binary heaps
+
+It is similar to binary search tree, but have different conditionals, it's fully complete the level before to create a new one, the left side it's full first.
+
+Action | Function
+------ | --------
+Insertion | $O(log n)$
+Removal | $O(log n)$
+Search  | $O(n)$
+
+Some kinds of Binary heaps are:
+
+- **MaxBinaryHeap**, parent nodes are always larger than the child nodes.
+
+  ```plain text
+                80
+        60              30
+    47      58      27      15
+  25  10  53  24  20  11
+  ```
+
+- **MinBinaryHeap**, parent nodes are always smaller than the child nodes.
+
+  ```plain text
+                10
+        24              11
+    25      53      20      15
+  47  80  58  60  27  30
+  ```
+
+It could be saved in an array, following the formula $2n+1$ for the left child, and $2n+2$ for the right child where n is the element index.
+
+```plain text
+[80, 60, 30, 47, 58, 27, 15, 25, 10, 53, 24, 20, 11]
+ 0   1   2   3   4   5   6   7   8   9   10  11  12
+60 (2(0) + 1 = 1) <- 80 -> (2(0) + 2 = 2) 30
+47 (2(1) + 1 = 3) <- 60 -> (2(1) + 2 = 4) 58
+...
+20 (2(5) + 1 = 11) <- 27 -> (2(5) + 2 = 12) 11
+```
+
+To find the parent it follows the formula $(n-1)/2$ and floor the result
+
+```plain text
+[10, 24, 11, 25, 53, 20, 15, 47, 80, 58, 60, 27, 30]
+ 0   1   2   3   4   5   6   7   8   9   10  11  12
+11 -> ((2 - 1)/ 2 = 0.5 = 0) 10
+58 -> ((9 - 1)/ 2 = 4) 53
 ```

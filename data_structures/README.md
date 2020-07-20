@@ -13,6 +13,7 @@ These are some data structures which can be useful to resolve different situatio
   - [Binary Search Trees](#binary-search-trees)
   - [Traversing a tree](#traversing-a-tree)
   - [Binary heaps](#binary-heaps)
+- [Hash tables](#hash-tables)
 
 ## Singly linked list
 
@@ -190,4 +191,37 @@ To find the parent it follows the formula $(n-1)/2$ and floor the result
  0   1   2   3   4   5   6   7   8   9   10  11  12
 11 -> ((2 - 1)/ 2 = 0.5 = 0) 10
 58 -> ((9 - 1)/ 2 = 4) 53
+```
+
+## Hash tables
+
+Store key and value pairs. The keys don't have any order. Faster than array to finding, adding and removing values. In JS is an Object or a Map.
+
+Action | Function
+------ | --------
+Insertion | $O(1)$
+Removal | $O(1)$
+Access | $O(1)$
+
+```plain text
+hashFunction('pink') = 3
+hashFunction('orange') = 1
+hashFunction('brown') = 1
+
+// Separate chaining
+|  0  |  1  |  2  |  3  |  4  |  5  |
+                     ^
+            [['pink', '#FFC0CB']]
+         ^
+  [['orange', '#FFA500'],
+  ['brown', '#A52A2A']]
+
+// Linear Probing
+      ['brown', '#A52A2A']
+               v
+|  0  |  1  |  2  |  3  |  4  |  5  |
+                     ^
+             ['pink', '#FFC0CB']
+         ^
+    ['orange', '#FFA500']
 ```

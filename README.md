@@ -30,6 +30,7 @@ This is a project to save all the progress in the course of [Big o Notation](htt
   - [Stack](data_structures#stack)
   - [Queues](data_structures#queues)
   - [Trees](data_structures#trees)
+  - [Hash tables](data_structures#hash-tables)
 
 ## Functions
 

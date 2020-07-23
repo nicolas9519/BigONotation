@@ -14,6 +14,7 @@ These are some data structures which can be useful to resolve different situatio
   - [Traversing a tree](#traversing-a-tree)
   - [Binary heaps](#binary-heaps)
 - [Hash tables](#hash-tables)
+- [Graphs](#graphs)
 
 ## Singly linked list
 
@@ -225,3 +226,23 @@ hashFunction('brown') = 1
          ^
     ['orange', '#FFA500']
 ```
+
+## Graphs
+
+It's an unlimited group of vertex (nodes) connected between them in different ways (Edges).
+
+```plain text
+      C - A - B
+       \  |  /
+          D
+       /  |  \
+      E   F   G
+
+      C   A   B
+      | / | \ |
+      E - D - F
+```
+
+**Directed:** Allow declare the direction of the edges
+**Undirected:** Allow both directions of the edges
+**Weighted :** The edges have a value

@@ -67,15 +67,16 @@ class PriorityQueue {
     2       1
   3   3   3   2
 */
-const myPriorityQueue = new PriorityQueue();
-myPriorityQueue.enqueue("Low", 3);
-myPriorityQueue.enqueue("Low", 3);
-myPriorityQueue.enqueue("Low", 3);
-myPriorityQueue.enqueue("Medium", 2);
-myPriorityQueue.enqueue("Medium", 2);
-myPriorityQueue.enqueue("High", 1);
-myPriorityQueue.enqueue("High", 1);
-myPriorityQueue.dequeue();
-myPriorityQueue.dequeue();
-myPriorityQueue.dequeue();
-myPriorityQueue.dequeue();
+// const myPriorityQueue = new PriorityQueue();
+// myPriorityQueue.enqueue("Low", 3);
+// myPriorityQueue.enqueue("Low", 3);
+// myPriorityQueue.enqueue("Low", 3);
+// myPriorityQueue.enqueue("Medium", 2);
+// myPriorityQueue.enqueue("Medium", 2);
+// myPriorityQueue.enqueue("High", 1);
+// myPriorityQueue.enqueue("High", 1);
+// myPriorityQueue.dequeue();
+// myPriorityQueue.dequeue();
+// myPriorityQueue.dequeue();
+// myPriorityQueue.dequeue();
+module.exports = PriorityQueue;

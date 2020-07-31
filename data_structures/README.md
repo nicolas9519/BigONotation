@@ -15,6 +15,7 @@ These are some data structures which can be useful to resolve different situatio
   - [Binary heaps](#binary-heaps)
 - [Hash tables](#hash-tables)
 - [Graphs](#graphs)
+  - [Dijkstra's Algorithm](#dijkstra's-algorithm)
 
 ## Singly linked list
 
@@ -245,4 +246,144 @@ It's an unlimited group of vertex (nodes) connected between them in different wa
 
 **Directed:** Allow declare the direction of the edges
 **Undirected:** Allow both directions of the edges
-**Weighted :** The edges have a value
+**Weighted:** The edges have a value
+
+### Dijkstra's Algorithm
+
+This algorithm helps to find the shortest path between two vertexes.
+The graph has to be weighted.
+It works using a priority queue which prioritizes the smaller path and visits each vertex until found the final vertex.
+
+```plain text
+     C - 3 - D - 3 - E
+  4/ | \     |     / | \9
+  A  2   9   7   2   7  B
+  7\ |     \ | /     | /3
+     F - 8 - G - 3 - H
+```
+
+```plain text
+Start A, End B:
+
+- visited: []
+  distances: { A: 0, ...:Infinity }
+  previous: { ...: null }
+- visited:[A]
+  distances: { A: 0, C: 4, F: 7, ...:Infinity }
+  previous: { C: A, F: A, ...: null }
+- visited:[A, C]
+  distances: {
+    A: 0,
+    C: 4,
+    D: 7,
+    F: 6,
+    G: 13,
+    ...:Infinity
+  }
+  previous: {
+    C: A,
+    D: C,
+    F: C,
+    G: C,
+    ...: null
+  }
+- visited:[A, C, F]
+  distances: {
+    A: 0,
+    C: 4,
+    D: 7,
+    F: 6,
+    G: 13,
+    ...:Infinity
+  }
+  previous: {
+    C: A,
+    D: C,
+    F: C,
+    G: C,
+    ...: null
+  }
+- visited:[A, C, F, D]
+  distances: {
+    A: 0,
+    C: 4,
+    D: 7,
+    E: 10,
+    F: 6,
+    G: 13,
+    ...:Infinity
+  }
+  previous: {
+    C: A,
+    D: C,
+    E: D,
+    F: C,
+    G: C,
+    ...: null
+  }
+- visited:[A, C, F, D, E]
+  distances: {
+    A: 0,
+    B: 19,
+    C: 4,
+    D: 7,
+    E: 10,
+    F: 6,
+    G: 12,
+    H: 17
+  }
+  previous: {
+    A: null,
+    B: E,
+    C: A,
+    D: C,
+    E: D,
+    F: C,
+    G: E,
+    H: E,
+  }
+- visited:[A, C, F, D, E, G]
+  distances: {
+    A: 0,
+    B: 19,
+    C: 4,
+    D: 7,
+    E: 10,
+    F: 6,
+    G: 12,
+    H: 15
+  }
+  previous: {
+    A: null,
+    B: E,
+    C: A,
+    D: C,
+    E: D,
+    F: C,
+    G: E,
+    H: G,
+  }
+- visited:[A, C, F, D, E, G, H]
+  distances: {
+    A: 0,
+    B: 18,
+    C: 4,
+    D: 7,
+    E: 10,
+    F: 6,
+    G: 12,
+    H: 15
+  }
+  previous: {
+    A: null,
+    B: H,
+    C: A,
+    D: C,
+    E: D,
+    F: C,
+    G: E,
+    H: G,
+  }
+
+path: (B -> H -> G -> E -> D -> C -> A)
+```

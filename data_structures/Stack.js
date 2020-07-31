@@ -36,11 +36,13 @@ class Stack {
   }
 
 };
-const newStack = new Stack();
-console.log(newStack.push("First"));
-console.log(newStack.push("Second"));
-console.log(newStack.push("Third"));
-console.log(newStack.pop());
-console.log(newStack.pop());
-console.log(newStack.pop());
-console.log(newStack.pop());
+// const newStack = new Stack();
+// console.log(newStack.push("First"));
+// console.log(newStack.push("Second"));
+// console.log(newStack.push("Third"));
+// console.log(newStack.pop());
+// console.log(newStack.pop());
+// console.log(newStack.pop());
+// console.log(newStack.pop());
+
+module.exports = Stack;

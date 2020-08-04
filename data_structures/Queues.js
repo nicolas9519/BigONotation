@@ -38,11 +38,11 @@ class Queue {
 
 }
 // const newQueue = new Queue();
-// console.log(newQueue.enqueue("First"));
-// console.log(newQueue.enqueue("Second"));
-// console.log(newQueue.enqueue("Third"));
-// console.log(newQueue.dequeue());
-// console.log(newQueue.dequeue());
-// console.log(newQueue.dequeue());
-// console.log(newQueue.dequeue());
+// newQueue.enqueue("First");
+// newQueue.enqueue("Second");
+// newQueue.enqueue("Third");
+// newQueue.dequeue();
+// newQueue.dequeue();
+// newQueue.dequeue();
+// newQueue.dequeue();
 module.exports = Queue;

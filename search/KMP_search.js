@@ -1,7 +1,6 @@
 function KMPSearch(txt, pattern) {
   let count = 0;
   const lps = compute(pattern);
-  console.log(lps)
   let i = 0;
   let j = 0;
   while (i < txt.length) {
@@ -11,7 +10,6 @@ function KMPSearch(txt, pattern) {
     }
     if (j === pattern.length) {
       count++;
-      console.log("found", (i - j));
       j = lps[j - 1];
     } else if (i < txt.length && pattern[j] !== txt[i]) {
       if (j != 0) j = lps[j - 1];
@@ -52,4 +50,4 @@ function compute(pattern) {
 //   return count;
 // }
 
-console.log(KMPSearch('qwertywqweerqwertywqweeqwertywqweerqwertywqweerrqwertywqweerqwertywqweer', 'qwertywqweerqwertywqweer'));
+KMPSearch('qwertywqweerqwertywqweeqwertywqweerqwertywqweerrqwertywqweerqwertywqweer', 'qwertywqweerqwertywqweer');

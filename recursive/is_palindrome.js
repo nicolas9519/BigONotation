@@ -31,9 +31,9 @@ function isPalindrome(mainStr){
 //   return true;
 // }
 
-console.log(isPalindrome('a')); // true
-console.log(isPalindrome('awesome')); // false
-console.log(isPalindrome('foobar')); // false
-console.log(isPalindrome('tacocat')); // true
-console.log(isPalindrome('amanaplanacanalpanama')); // true
-console.log(isPalindrome('amanaplanacanalpandemonium')); // false
+isPalindrome('a'); // true
+isPalindrome('awesome'); // false
+isPalindrome('foobar'); // false
+isPalindrome('tacocat'); // true
+isPalindrome('amanaplanacanalpanama'); // true
+isPalindrome('amanaplanacanalpandemonium'); // false

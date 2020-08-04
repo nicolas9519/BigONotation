@@ -21,5 +21,4 @@ const arr = Array.from({ length: 10 }, () => Math.floor(Math.random() * 10));
 const t1 = performance.now();
 const result = quickSort(arr);
 // const result = arr.sort((a, b) => a - b);
-console.log(result);
 console.log(performance.now() - t1);

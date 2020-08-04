@@ -5,5 +5,5 @@ function linearSearch(arr, val) {
   return -1;
 }
 
-console.log(linearSearch([1, 2, 3, 4, 5], 3));
-console.log(linearSearch([1, 2, 3, 4, 5], 31));
+linearSearch([1, 2, 3, 4, 5], 3);
+linearSearch([1, 2, 3, 4, 5], 31);

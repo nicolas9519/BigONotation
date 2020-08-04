@@ -28,5 +28,5 @@ const obj2 = {
   e: { e: { e: 2 }, ee: 'car' }
 };
 
-console.log(nestedEvenSum(obj1)); // 6
-console.log(nestedEvenSum(obj2)); // 10
+nestedEvenSum(obj1); // 6
+nestedEvenSum(obj2); // 10

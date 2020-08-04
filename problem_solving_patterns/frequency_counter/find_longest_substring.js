@@ -13,10 +13,10 @@ function findLongestSubstring(str) {
   return longest;
 }
 
-console.log(findLongestSubstring(''));
-console.log(findLongestSubstring('rithmschool'));
-console.log(findLongestSubstring('thisisawesome'));
-console.log(findLongestSubstring('thecatinthehat'));
-console.log(findLongestSubstring('bbbbbb'));
-console.log(findLongestSubstring('longestsubstring'));
-console.log(findLongestSubstring('thisishowwedoit'));
+findLongestSubstring('');
+findLongestSubstring('rithmschool');
+findLongestSubstring('thisisawesome');
+findLongestSubstring('thecatinthehat');
+findLongestSubstring('bbbbbb');
+findLongestSubstring('longestsubstring');
+findLongestSubstring('thisishowwedoit');

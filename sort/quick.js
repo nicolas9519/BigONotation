@@ -24,5 +24,3 @@ function quickSort(arr, start = 0, end = arr.length) {
 const arr = [5, 2, 1, 4, 6, 9, 3, 7, 0];
 
 const result = quickSort(arr, 0, arr.length - 1);
-
-console.log(arr, result);

@@ -37,10 +37,10 @@ class Stack {
 
 };
 const newStack = new Stack();
-console.log(newStack.push("First"));
-console.log(newStack.push("Second"));
-console.log(newStack.push("Third"));
-console.log(newStack.pop());
-console.log(newStack.pop());
-console.log(newStack.pop());
-console.log(newStack.pop());
+newStack.push("First");
+newStack.push("Second");
+newStack.push("Third");
+newStack.pop();
+newStack.pop();
+newStack.pop();
+newStack.pop();

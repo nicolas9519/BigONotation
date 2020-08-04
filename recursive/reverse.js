@@ -3,5 +3,5 @@ function reverse(str){
   return reverse(str.substring(1)) + str[0];
 }
 
-console.log(reverse('awesome')); // 'emosewa'
-console.log(reverse('rithmschool')); // 'loohcsmhtir'
+reverse('awesome'); // 'emosewa'
+reverse('rithmschool'); // 'loohcsmhtir'

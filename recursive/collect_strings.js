@@ -25,4 +25,4 @@ const obj = {
   }
 }
 
-console.log(collectStrings(obj)); // ["foo", "bar", "baz"])
+collectStrings(obj); // ["foo", "bar", "baz"])

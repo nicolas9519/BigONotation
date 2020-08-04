@@ -2,19 +2,19 @@ function power(base, exponent) {
   if (exponent === 0) return 1;
   return base * power(base, exponent - 1);
 }
-console.log(power(2, 0)); // 1
-console.log(power(2, 2)); // 4
-console.log(power(2, 4)); // 16
+power(2, 0); // 1
+power(2, 2); // 4
+power(2, 4); // 16
 
 
 function factorial(n) {
   if (n <= 1) return 1;
   return n * factorial(n - 1);
 }
-console.log(factorial(1)); // 1
-console.log(factorial(2)); // 2
-console.log(factorial(4)); // 24
-console.log(factorial(7)); // 5040
+factorial(1); // 1
+factorial(2); // 2
+factorial(4); // 24
+factorial(7); // 5040
 
 
 function productOfArray(mainArray) {
@@ -26,16 +26,16 @@ function productOfArray(mainArray) {
   })(mainArray);
   return total;
 }
-console.log(productOfArray([1, 2, 3])); // 6
-console.log(productOfArray([1, 2, 3, 10])); // 60
+productOfArray([1, 2, 3]); // 6
+productOfArray([1, 2, 3, 10]); // 60
 
 
 function recursiveRange(num) {
   if (num === 0) return 0;
   return num + recursiveRange(num - 1);
 }
-console.log(recursiveRange(6)); // 21
-console.log(recursiveRange(10)); // 55 
+recursiveRange(6); // 21
+recursiveRange(10); // 55 
 
 
 function fib(n) {

@@ -44,6 +44,19 @@ class SinglyLinkedList {
     this.length--;
     return removed;
   }
+  shift() {
+    if (!this.head) return undefined;
+    const removed = this.head;
+    if (this.length === 1) {
+      this.head = null;
+      this.tail = null;
+    } else {
+      this.head = removed.next;
+      removed.next = null;
+    }
+    this.length--;
+    return removed;
+  }
   get(pos) {
     if (this.length <= pos || pos < 0 || !this.head) return null;
     let temp = 0;
@@ -94,6 +107,17 @@ class SinglyLinkedList {
       temp = this.head;
     }
     return this;
+  }
+  remove(ind) {
+    if (ind < 0 || ind >= this.length) return undefined;
+    if (ind === this.length - 1 || this.length === 1) return this.pop();
+    if (ind === 0) return this.shift();
+    const previous = this.get(ind - 1);
+    const removed = previous.next;
+    previous.next = removed.next;
+    removed.next = null;
+    this.length--;
+    return removed;
   }
 }
 

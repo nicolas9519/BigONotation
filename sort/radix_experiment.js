@@ -12,7 +12,7 @@ function digitCount(num) {
 }
 
 function mostDigits(arr) {
-  let max = -Infinity;
+  let max = 0;
   for (let num of arr) {
     const count = digitCount(num);
     max = Math.max(max, count);

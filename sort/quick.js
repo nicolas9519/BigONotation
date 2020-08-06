@@ -1,4 +1,4 @@
-function pivot(arr, start, end) {
+function pivot(arr, start = 0, end = arr.length - 1) {
   function swap(arr, i, j) {
     [arr[i], arr[j]] = [arr[j], arr[i]];
   }
@@ -13,7 +13,7 @@ function pivot(arr, start, end) {
   return pivot;
 }
 
-function quickSort(arr, start = 0, end = arr.length) {
+function quickSort(arr, start = 0, end = arr.length - 1) {
   if (start >= end) return arr;
   const res = pivot(arr, start, end);
   quickSort(arr, start, res - 1);
@@ -23,4 +23,4 @@ function quickSort(arr, start = 0, end = arr.length) {
 
 const arr = [5, 2, 1, 4, 6, 9, 3, 7, 0];
 
-const result = quickSort(arr, 0, arr.length - 1);
+const result = quickSort(arr);

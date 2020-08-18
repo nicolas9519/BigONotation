@@ -145,6 +145,50 @@ class BinarySearchTree {
     replacedNode.right = null;
     return replacedNode;
   }
+  findSecondLargest() {
+    if (!this.root) return undefined;
+    if (!this.root.left && !this.root.right) return undefined;
+    if (!this.root.right) return this.root.left.value;
+    let previous = this.root;
+    let current = this.root.right;
+    while (current.right) {
+      previous = current;
+      current = previous.right;
+    }
+    if (current.left) {
+      previous = current.left;
+      while (previous.right) {
+        previous = previous.right;
+      }
+    }
+    return previous.value;
+  }
+  isBalanced() {
+    if (!this.root) return undefined;
+    if (!this.root.left && !this.root.right) return true;
+    const queueLeft = new Queue();
+    const queueRight = new Queue();
+    let countLeft = 0;
+    let countRight = 0;
+    queueLeft.enqueue(this.root.left);
+    queueRight.enqueue(this.root.right);
+    while (queueLeft.size || queueRight.size) {
+      const left = queueLeft.dequeue();
+      if (left) {
+        queueLeft.enqueue(left.right);
+        queueLeft.enqueue(left.left);
+        countLeft++;
+      }
+      const right = queueRight.dequeue();
+      if (right) {
+        queueRight.enqueue(right.right);
+        queueRight.enqueue(right.left);
+        countRight++;
+      }
+      if (Math.abs(countLeft - countRight) > 1) return false;
+    }
+    return true;
+  }
 }
 
 const binarySearchTree = new BinarySearchTree();
@@ -164,8 +208,10 @@ binarySearchTree
   .insert(98)
   .insert(55)
   .insert(46);
-binarySearchTree.remove(89);
-binarySearchTree.remove(95);
+// binarySearchTree.remove(89);
+// binarySearchTree.remove(95);
 // binarySearchTree.remove(42);
 // binarySearchTree.remove(44);
 // binarySearchTree.replaceNodeWithSmallest();
+// binarySearchTree.findSecondLargest();
+// binarySearchTree.isBalanced();

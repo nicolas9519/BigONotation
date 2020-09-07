@@ -54,6 +54,24 @@ class Trie {
     }
     return trie;
   }
+  getWords(words = [], currentWord = '') {
+    if (this.isWord) {
+      words.push(currentWord);
+    }
+    for (let character in this.characters) {
+      const newWord = currentWord + character;
+      this.characters[character].getWords(words, newWord);
+    }
+    return words;
+  }
+  autoComplete(prefix) {
+    let current = this;
+    for (let char of prefix) {
+      if (!current.characters[char]) return [];
+      current = current.characters[char];
+    }
+    return current.getWords([], prefix);
+  }
 }
 
 const firstTrie = new Trie();
@@ -85,6 +103,13 @@ thirdTrie.addWord('father');
 thirdTrie.addWord('forget');
 thirdTrie.addWord('awesome');
 thirdTrie.addWord('argue');
+assert.deepEqual(thirdTrie.getWords(), [
+  'fun', 'fast', 'fat', 'fate', 'fates',
+  'father', 'forget', 'awesome', 'argue'
+]);
+assert.deepEqual(thirdTrie.autoComplete('fa'), ['fast', 'fat', 'fate', 'fates', 'father']);
+assert.deepEqual(thirdTrie.autoComplete('a'), ['awesome', 'argue']);
+assert.deepEqual(thirdTrie.autoComplete('arz'), []);
 thirdTrie.removeWord('fat');
 assert.equal(thirdTrie.characters['f'].characters['a'].characters['t'].isWord, false);
 assert.equal(thirdTrie.characters['f'].characters['a'].characters['t'].characters['e'].isWord, true);

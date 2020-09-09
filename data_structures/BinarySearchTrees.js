@@ -143,6 +143,25 @@ class BinarySearchTree {
     return visited;
   }
 
+  helperBalanceTree(arr) {
+    if (!arr.length) return null;
+    if (arr.length === 1) {
+      const node = new Node(arr[0]);
+      return node;
+    }
+    const mid = Math.floor(arr.length / 2);
+    const root = new Node(arr[mid]);
+    root.left = this.helperBalanceTree(arr.slice(0, mid));
+    root.right = this.helperBalanceTree(arr.slice(mid + 1));
+    return root;
+  }
+
+  balanceTree() {
+    const arr = this.DFSInOrder();
+    this.root = this.helperBalanceTree(arr);
+    return this;
+  }
+
 }
 /*
          14
@@ -169,3 +188,19 @@ myTree.breadthFirstSearch();
 myTree.DFSPreOrder();
 myTree.DFSPostOrder();
 myTree.DFSInOrder();
+
+const secondTree = new BinarySearchTree();
+secondTree.insert(15);
+secondTree.insert(14);
+secondTree.insert(13);
+secondTree.insert(12);
+secondTree.insert(11);
+secondTree.insert(10);
+secondTree.insert(9);
+secondTree.insert(16);
+secondTree.insert(17);
+secondTree.insert(18);
+secondTree.insert(19);
+secondTree.insert(20);
+secondTree.insert(21);
+secondTree.balanceTree();
